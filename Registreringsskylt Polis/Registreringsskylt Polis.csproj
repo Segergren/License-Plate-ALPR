@@ -132,10 +132,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="1200px-Polisen_vapen_bra.svg.ico" />
-    <Content Include="License-LGPL.txt" />
-    <Content Include="LicensePlate.bmp">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="warelogic\x64\opencv_core971.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

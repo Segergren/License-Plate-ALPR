@@ -47,10 +47,15 @@
             this.IOwner = new System.Windows.Forms.Label();
             this.IOwnerPlaceholder = new System.Windows.Forms.Label();
             this.ownerTextAnimation = new System.Windows.Forms.Timer(this.components);
+            this.IGoNext = new System.Windows.Forms.PictureBox();
+            this.IGoPrev = new System.Windows.Forms.PictureBox();
+            this.ICurrentCar = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ICarImageInput)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IPoliceLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IEnlagedLicenseplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IGoNext)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IGoPrev)).BeginInit();
             this.SuspendLayout();
             // 
             // ICarImageInput
@@ -58,9 +63,9 @@
             this.ICarImageInput.BackColor = System.Drawing.Color.Transparent;
             this.ICarImageInput.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ICarImageInput.Image = ((System.Drawing.Image)(resources.GetObject("ICarImageInput.Image")));
-            this.ICarImageInput.Location = new System.Drawing.Point(148, 41);
+            this.ICarImageInput.Location = new System.Drawing.Point(148, 11);
             this.ICarImageInput.Name = "ICarImageInput";
-            this.ICarImageInput.Size = new System.Drawing.Size(464, 256);
+            this.ICarImageInput.Size = new System.Drawing.Size(464, 257);
             this.ICarImageInput.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ICarImageInput.TabIndex = 1;
             this.ICarImageInput.TabStop = false;
@@ -192,7 +197,7 @@
             this.IOwner.BackColor = System.Drawing.Color.Transparent;
             this.IOwner.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IOwner.ForeColor = System.Drawing.Color.Lime;
-            this.IOwner.Location = new System.Drawing.Point(323, 494);
+            this.IOwner.Location = new System.Drawing.Point(323, 496);
             this.IOwner.Name = "IOwner";
             this.IOwner.Size = new System.Drawing.Size(426, 56);
             this.IOwner.TabIndex = 15;
@@ -203,7 +208,7 @@
             this.IOwnerPlaceholder.BackColor = System.Drawing.Color.Transparent;
             this.IOwnerPlaceholder.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IOwnerPlaceholder.ForeColor = System.Drawing.Color.White;
-            this.IOwnerPlaceholder.Location = new System.Drawing.Point(157, 495);
+            this.IOwnerPlaceholder.Location = new System.Drawing.Point(154, 495);
             this.IOwnerPlaceholder.Name = "IOwnerPlaceholder";
             this.IOwnerPlaceholder.Size = new System.Drawing.Size(400, 55);
             this.IOwnerPlaceholder.TabIndex = 14;
@@ -214,6 +219,47 @@
             // 
             this.ownerTextAnimation.Tick += new System.EventHandler(this.ownerTextAnimation_Tick);
             // 
+            // IGoNext
+            // 
+            this.IGoNext.BackColor = System.Drawing.Color.Transparent;
+            this.IGoNext.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.IGoNext.Image = ((System.Drawing.Image)(resources.GetObject("IGoNext.Image")));
+            this.IGoNext.Location = new System.Drawing.Point(559, 274);
+            this.IGoNext.Name = "IGoNext";
+            this.IGoNext.Size = new System.Drawing.Size(53, 52);
+            this.IGoNext.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.IGoNext.TabIndex = 16;
+            this.IGoNext.TabStop = false;
+            this.IGoNext.Visible = false;
+            this.IGoNext.Click += new System.EventHandler(this.IGoNext_Click);
+            // 
+            // IGoPrev
+            // 
+            this.IGoPrev.BackColor = System.Drawing.Color.Transparent;
+            this.IGoPrev.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.IGoPrev.Image = ((System.Drawing.Image)(resources.GetObject("IGoPrev.Image")));
+            this.IGoPrev.Location = new System.Drawing.Point(148, 274);
+            this.IGoPrev.Name = "IGoPrev";
+            this.IGoPrev.Size = new System.Drawing.Size(53, 52);
+            this.IGoPrev.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.IGoPrev.TabIndex = 17;
+            this.IGoPrev.TabStop = false;
+            this.IGoPrev.Visible = false;
+            this.IGoPrev.Click += new System.EventHandler(this.IGoPrev_Click);
+            // 
+            // ICurrentCar
+            // 
+            this.ICurrentCar.BackColor = System.Drawing.Color.Transparent;
+            this.ICurrentCar.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ICurrentCar.ForeColor = System.Drawing.Color.White;
+            this.ICurrentCar.Location = new System.Drawing.Point(207, 274);
+            this.ICurrentCar.Name = "ICurrentCar";
+            this.ICurrentCar.Size = new System.Drawing.Size(346, 52);
+            this.ICurrentCar.TabIndex = 18;
+            this.ICurrentCar.Text = "1/3";
+            this.ICurrentCar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ICurrentCar.Visible = false;
+            // 
             // Regskylt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -221,6 +267,9 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(761, 556);
+            this.Controls.Add(this.ICurrentCar);
+            this.Controls.Add(this.IGoPrev);
+            this.Controls.Add(this.IGoNext);
             this.Controls.Add(this.IOwner);
             this.Controls.Add(this.IOwnerPlaceholder);
             this.Controls.Add(this.ILicensePlate);
@@ -242,6 +291,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.IClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IPoliceLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IEnlagedLicenseplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IGoNext)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IGoPrev)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -264,6 +315,9 @@
         private System.Windows.Forms.Label IOwner;
         private System.Windows.Forms.Label IOwnerPlaceholder;
         private System.Windows.Forms.Timer ownerTextAnimation;
+        private System.Windows.Forms.PictureBox IGoNext;
+        private System.Windows.Forms.PictureBox IGoPrev;
+        private System.Windows.Forms.Label ICurrentCar;
     }
 }
 
