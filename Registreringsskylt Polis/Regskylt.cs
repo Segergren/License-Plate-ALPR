@@ -313,7 +313,7 @@ namespace Registreringsskylt_Polis
                 Bitmap bmpImage = new Bitmap(imagePath);
                 IEnlagedLicenseplate.Show();
                 IEnlagedLicenseplate.Image = (Image)bmpImage.Clone(regge, bmpImage.PixelFormat);
-                ICurrentCar.Text = (currentCar+1) + "/" + (foundCars+1);
+                ICurrentCar.Text = (currentCar + 1) + "/" + (foundCars + 1);
                 ICurrentCar.Visible = true;
                 UpdateNav();
             }
@@ -338,7 +338,7 @@ namespace Registreringsskylt_Polis
             {
                 IGoNext.Visible = false;
                 IGoPrev.Visible = false;
-            }          
+            }
         }
 
         /// <summary>
